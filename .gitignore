@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.DS_Store
+
+.cache/
+wandb/
+
+checkpoints/
+saved_model/
+results/
+logs/
+runs/

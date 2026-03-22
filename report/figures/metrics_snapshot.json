@@ -1,0 +1,212 @@
+{
+  "task1": {
+    "epoch": 3.0,
+    "test_loss": 0.4767415225505829,
+    "test_mae": 0.5263582468032837,
+    "test_mae_label_0": 0.5649077296257019,
+    "test_mae_label_1": 0.4878087341785431,
+    "test_mse": 0.4767414629459381,
+    "test_mse_label_0": 0.5349394679069519,
+    "test_mse_label_1": 0.4185435473918915,
+    "test_pearson": 0.7391863465309143,
+    "test_pearson_label_0": 0.690397322177887,
+    "test_pearson_label_1": 0.7844523787498474,
+    "test_r2": 0.5407313704490662,
+    "test_r2_label_0": 0.4715833067893982,
+    "test_r2_label_1": 0.6065371036529541,
+    "test_runtime": 282.7585,
+    "test_samples_per_second": 145.658,
+    "test_steps_per_second": 2.278
+  },
+  "task2_generation": {
+    "model_name": "./saved_model/deepstarr_sft",
+    "parquet_path": "/home/SHBCIlab/zsy/qiuyi/data/DeepSTARR-enhancer-activity/valid.parquet",
+    "num_samples": 128,
+    "prompt_bp_length": 120,
+    "continuation_bp_length": 126,
+    "mean_bp_accuracy": 0.29786706349206343,
+    "exact_match_rate": 0.0,
+    "valid_dna_rate": 1.0,
+    "unique_rate": 0.546875,
+    "mean_generated_bp_length": 126.0,
+    "attn_implementation": "sdpa",
+    "bf16": true,
+    "do_sample": false,
+    "temperature": 1.0,
+    "top_p": 1.0,
+    "device": "cuda"
+  },
+  "task3_generation": {
+    "model_name": "./saved_model/deepstarr_sft_conditioned",
+    "parquet_path": "/home/SHBCIlab/zsy/qiuyi/data/DeepSTARR-enhancer-activity-conditioned/valid.parquet",
+    "sequence_col": "conditioned_sequence",
+    "conditioned_input": true,
+    "condition_filter": null,
+    "num_samples": 384,
+    "prompt_bp_length": 120,
+    "continuation_bp_length": 126,
+    "mean_bp_accuracy": 0.30185598544973524,
+    "exact_match_rate": 0.0,
+    "valid_dna_rate": 1.0,
+    "unique_rate": 0.4713541666666667,
+    "mean_generated_bp_length": 126.0,
+    "attn_implementation": "sdpa",
+    "bf16": true,
+    "do_sample": false,
+    "temperature": 1.0,
+    "top_p": 1.0,
+    "device": "cuda"
+  },
+  "task3_scoring": {
+    "num_rows": 384,
+    "attn_implementation": "sdpa",
+    "mean_generated_prediction_label_0": 0.618408203125,
+    "mean_reference_prediction_label_0": -0.1385955810546875,
+    "mean_prediction_delta_label_0": 0.7570037841796875,
+    "mean_generated_prediction_label_1": -0.3321024576822917,
+    "mean_reference_prediction_label_1": -0.019102732340494793,
+    "mean_prediction_delta_label_1": -0.3129997253417969,
+    "mean_generated_prediction_sum": 0.2863057454427083,
+    "mean_reference_prediction_sum": -0.15769831339518228,
+    "mean_prediction_delta_sum": 0.4440040588378906,
+    "positive_delta_rate": 0.7135416666666666,
+    "top_generated_prediction_sum": 3.6171875,
+    "top_candidates_preview": [
+      {
+        "source_id": "chr2R_4620936_4621184_+_peak_849bp_region",
+        "condition_token": "<sp2>",
+        "activity_bucket": "high",
+        "generated_prediction": [
+          1.3671875,
+          2.25
+        ],
+        "reference_prediction": [
+          0.78125,
+          2.28125
+        ],
+        "prediction_delta": [
+          0.5859375,
+          -0.03125
+        ],
+        "generated_sequence": "GACTTATCGATAGGCAAGAGGTGTGACCGTGCGATTAGTGCAGGCAAATACAGTGTAGAGTGCGGTGTAAGAACACTGCCATACTGTAAAATAATAATTGTATCTGCTAACTTGCAAATGAAAAATAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      },
+      {
+        "source_id": "chr2R_5729922_5730170_-_positive_peaks",
+        "condition_token": "<sp2>",
+        "activity_bucket": "high",
+        "generated_prediction": [
+          1.1875,
+          2.40625
+        ],
+        "reference_prediction": [
+          1.609375,
+          2.90625
+        ],
+        "prediction_delta": [
+          -0.421875,
+          -0.5
+        ],
+        "generated_sequence": "CCCTATTTAAGTTGCGGAGATCATTTAATTTAATAAGCAAATGCAAATAATCATAAGACCGTATAACATAATTTGTAAAACACGTTATGCAGTGTGACCGTGCGATAAAGCCAGACTTATCAAAATATCGATAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      },
+      {
+        "source_id": "chr2R_3859403_3859651_-_positive_peaks",
+        "condition_token": "<sp2>",
+        "activity_bucket": "high",
+        "generated_prediction": [
+          0.859375,
+          2.53125
+        ],
+        "reference_prediction": [
+          0.015625,
+          1.7421875
+        ],
+        "prediction_delta": [
+          0.84375,
+          0.7890625
+        ],
+        "generated_sequence": "CCTATAATGATTCGGTAAGGTTTAAAATTCACTTAATGCTTACACTTGTACATACTTTCCCAATAAATTATTTAAAATTGGCGCTTCAATCCAAGCTGCAGTCTATCGGTGACTGCATTCTATCGATAGTTCATCGATATTTTTTCAGCTCTATTTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      },
+      {
+        "source_id": "chr2R_6670418_6670666_+_peak_849bp_region",
+        "condition_token": "<sp2>",
+        "activity_bucket": "high",
+        "generated_prediction": [
+          1.265625,
+          1.953125
+        ],
+        "reference_prediction": [
+          0.4921875,
+          1.7109375
+        ],
+        "prediction_delta": [
+          0.7734375,
+          0.2421875
+        ],
+        "generated_sequence": "GGTGCCATGCGGGATTTTCGGTGAGCGCGGCATGCGGCCACACTGCTGCCCAAACAGCTGTTCGAAATTGGAAAACAACAAATTCTAGAAAATCTATTTTTATCTCAAATTTCTATTCTTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      },
+      {
+        "source_id": "chr2R_7926415_7926663_-_positive_peaks",
+        "condition_token": "<sp2>",
+        "activity_bucket": "high",
+        "generated_prediction": [
+          0.8125,
+          2.28125
+        ],
+        "reference_prediction": [
+          0.8125,
+          2.484375
+        ],
+        "prediction_delta": [
+          0.0,
+          -0.203125
+        ],
+        "generated_sequence": "TGGCCTCCACGTTGTGATCGCCCATCTTTAGCTCCACCATTTCGTTATAATAATTTAATTTAAGTTTGTCAACAAAACAGCGTGCTATGAGGTTCTTCGATATGCGGTTTCTTTACCTATCGATAACTATCGATAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      }
+    ],
+    "by_activity_bucket": {
+      "high": {
+        "num_rows": 96,
+        "mean_generated_prediction_sum": 0.8880716959635416,
+        "mean_reference_prediction_sum": 1.0024566650390625,
+        "mean_prediction_delta_sum": -0.11438496907552083,
+        "positive_delta_rate": 0.4375,
+        "mean_generated_prediction_label_0": 0.8079630533854166,
+        "mean_reference_prediction_label_0": 0.396453857421875,
+        "mean_prediction_delta_label_0": 0.4115091959635417,
+        "mean_generated_prediction_label_1": 0.080108642578125,
+        "mean_reference_prediction_label_1": 0.6060028076171875,
+        "mean_prediction_delta_label_1": -0.5258941650390625
+      },
+      "low": {
+        "num_rows": 109,
+        "mean_generated_prediction_sum": -0.03244606508027523,
+        "mean_reference_prediction_sum": -0.8404440223623854,
+        "mean_prediction_delta_sum": 0.8079979572821101,
+        "positive_delta_rate": 0.8623853211009175,
+        "mean_generated_prediction_label_0": 0.4719663847477064,
+        "mean_reference_prediction_label_0": -0.49321781823394495,
+        "mean_prediction_delta_label_0": 0.9651842029816514,
+        "mean_generated_prediction_label_1": -0.5044124498279816,
+        "mean_reference_prediction_label_1": -0.34722620412844035,
+        "mean_prediction_delta_label_1": -0.1571862456995413
+      },
+      "mid": {
+        "num_rows": 179,
+        "mean_generated_prediction_sum": 0.15767119849860337,
+        "mean_reference_prediction_sum": -0.36415415502793297,
+        "mean_prediction_delta_sum": 0.5218253535265364,
+        "positive_delta_rate": 0.770949720670391,
+        "mean_generated_prediction_label_0": 0.6059215694832403,
+        "mean_reference_prediction_label_0": -0.20960631983240224,
+        "mean_prediction_delta_label_0": 0.8155278893156425,
+        "mean_generated_prediction_label_1": -0.4482503709846369,
+        "mean_reference_prediction_label_1": -0.15454783519553073,
+        "mean_prediction_delta_label_1": -0.29370253578910616
+      }
+    },
+    "predictor_model": "./results/deepstarr_regression/best_model",
+    "generation_details_path": "./results/deepstarr_sft_conditioned_valid/generation_details.jsonl",
+    "device": "cuda",
+    "bf16": true
+  }
+}

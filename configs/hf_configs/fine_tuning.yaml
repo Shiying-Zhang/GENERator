@@ -1,0 +1,31 @@
+# evaluation
+do_eval: false
+eval_strategy: 'no'
+load_best_model_at_end: false
+
+# saving
+save_strategy: "epoch"
+save_total_limit: 3
+
+# logging
+logging_strategy: "steps"
+logging_steps: 10
+
+# training
+num_train_epochs: 10000
+weight_decay: 0.1
+lr_scheduler_type: "cosine_with_min_lr"
+lr_scheduler_kwargs: {
+  "min_lr_rate": 0.1
+}
+adam_beta1: 0.9
+adam_beta2: 0.995
+gradient_checkpointing: True
+gradient_checkpointing_kwargs: { "use_reentrant": False }
+
+# dataset
+dataloader_num_workers: 4
+remove_unused_columns: false
+
+push_to_hub: false
+report_to: [ "wandb" ]
